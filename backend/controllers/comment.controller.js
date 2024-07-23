@@ -14,7 +14,7 @@ const createComment = async (req, res, next) => {
   try {
     if (!title || !content || !post_id) {
       return next(
-        errorHandler(400, "Title, content, and post_id are required")
+        errorHandler(400, "Title, content, and post_id are required!")
       );
     }
     const post = await db.Post.findByPk(post_id);

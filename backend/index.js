@@ -23,7 +23,7 @@ app.use("/posts-comments", postCommentRoutes);
 checkConnection().then(() => {
   app.listen(PORT, () => {
     console.log(
-      `Server is running on port ${PORT} and Database Connected Successfully`
+      `Server is running on port ${PORT} and Database Connected Successfully!`
     );
   });
 });

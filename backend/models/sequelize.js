@@ -1,15 +1,16 @@
 "use strict";
-
 const { Sequelize, DataTypes } = require("sequelize");
-const config = require("../config/db.config.js").development;
+const config = require("../config/db.config.js");
 
+const env = process.env.NODE_ENV || "development";
+const envConfig = config[env];
 const sequelize = new Sequelize(
-  config.database,
-  config.username,
-  config.password,
+  envConfig.database,
+  envConfig.username,
+  envConfig.password,
   {
-    host: config.host,
-    dialect: config.dialect,
+    host: envConfig.host,
+    dialect: envConfig.dialect,
   }
 );
 
