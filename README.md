@@ -28,7 +28,7 @@ A RESTful API for a blogging platform built with Node.js, Express, PostgreSQL, a
 2. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/syedahsan297engr/blog-api.git
+   git clone https://github.com/ahsan-kwanso/blog-api-v2.git
    cd blog-api/backend
 3. **Install Dependencies**
     ```bash
