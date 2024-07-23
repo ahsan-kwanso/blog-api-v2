@@ -29,7 +29,7 @@ A RESTful API for a blogging platform built with Node.js, Express, PostgreSQL, a
 
    ```bash
    git clone https://github.com/ahsan-kwanso/blog-api-v2.git
-   cd blog-api/backend
+   cd in folder where you cloned this git repo
 3. **Install Dependencies**
     ```bash
     npm install
@@ -40,6 +40,21 @@ A RESTful API for a blogging platform built with Node.js, Express, PostgreSQL, a
     ```plaintext
     JWT_SECRET=your_jwt_secret
     PORT=your_port_number
+    NODE_ENV=development
+
+    DB_USERNAME_DEV=your_user_name
+    DB_PASSWORD_DEV=your_password
+    DB_NAME_DEV=your_database_name
+    DB_HOST_DEV=your_host
+    DB_DIALECT_DEV=database (postgres, mysql etc)
+    
+    DB_USERNAME_TEST=your_test_database_username
+    DB_PASSWORD_TEST=your_test_database_password
+    DB_NAME_TEST=your_test_database_name
+    DB_HOST_TEST=your_host
+    DB_DIALECT_TEST=database (postgres, mysql etc)
+    
+    DATABASE_URL = your_db_url_provided_by_heroku
     ```
 
 2. **Create a database**: Set up a PostgreSQL database.
