@@ -48,12 +48,6 @@ A RESTful API for a blogging platform built with Node.js, Express, PostgreSQL, a
     DB_HOST_DEV=your_host
     DB_DIALECT_DEV=database (postgres, mysql etc)
     
-    DB_USERNAME_TEST=your_test_database_username
-    DB_PASSWORD_TEST=your_test_database_password
-    DB_NAME_TEST=your_test_database_name
-    DB_HOST_TEST=your_host
-    DB_DIALECT_TEST=database (postgres, mysql etc)
-    
     DATABASE_URL = your_db_url_provided_by_heroku
     ```
 
