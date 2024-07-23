@@ -4,15 +4,30 @@ const config = require("../config/db.config.js");
 
 const env = process.env.NODE_ENV || "development";
 const envConfig = config[env];
-const sequelize = new Sequelize(
-  envConfig.database,
-  envConfig.username,
-  envConfig.password,
-  {
-    host: envConfig.host,
+
+let sequelize;
+if (env === "production") {
+  sequelize = new Sequelize(envConfig.production_db_url, {
     dialect: envConfig.dialect,
-  }
-);
+    protocol: envConfig.dialect,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false, // For Heroku, you may need to adjust SSL settings
+      },
+    },
+  });
+} else {
+  sequelize = new Sequelize(
+    envConfig.database,
+    envConfig.username,
+    envConfig.password,
+    {
+      host: envConfig.host,
+      dialect: envConfig.dialect,
+    }
+  );
+}
 
 const db = {};
 db.sequelize = sequelize;
