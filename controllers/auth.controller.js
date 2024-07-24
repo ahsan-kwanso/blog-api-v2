@@ -38,7 +38,8 @@ const signIn = async (req, res, next) => {
         errorHandler(400, "All fields are required (email, password).")
       );
     const user = await db.User.findOne({ where: { email } });
-    const isPasswordValid = await bcrypt.compare(password, user.password);
+    const isPasswordValid =
+      user !== null ? await bcrypt.compare(password, user.password) : null;
     if (!user || !isPasswordValid) {
       return next(errorHandler(400, "Invalid email or password."));
     }
